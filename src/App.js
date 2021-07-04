@@ -36,6 +36,7 @@ function App() {
         if (data) {
           e.target.reset();
           alert("Your Data Added Successfully");
+          window.location.reload();
         }
       })
 
@@ -62,14 +63,17 @@ function App() {
      
 
       <form onSubmit={handleSubmit}>
-        <div style={{ display: ready ? "block" : "none" }}>
-          <span style={{fontSize: "25px", fontWeight: "500"}}>Are You Ready For This Survey? <br />YES</span>
+        <div className=" " style={{ display: ready ? "block" : "none" }}>
+          <p style={{fontSize: "25px", fontWeight: "500"}}>Are You Ready For This Survey?</p>
+          <div className='d-flex' ><p style={{ fontSize: "25px", fontWeight: "700"}}  className="text-success p-0 animate__animated animate__bounce animate__infinite animate__slower">YES</p>
           <input className="ready"
               onBlur={handleBlur}
               onClick={handleReady}
               name="Start"
               type="checkbox"
             />
+          </div>
+          
         </div>
 
         <fieldset disabled style={{ display: ready ? "block" : "none" }}>
@@ -304,7 +308,8 @@ function App() {
                 <label className="form-check-label">
                   <input
                     onBlur={handleBlur}
-                    name="male"
+                    name="Gender"
+                    value="Male"
                     type="radio"
                     className="form-check-input"
                   />
@@ -315,7 +320,8 @@ function App() {
                 <label className="form-check-label">
                   <input
                     onBlur={handleBlur}
-                    name="female"
+                    name="Gender"
+                    value="Female"
                     type="radio"
                     className="form-check-input"
                   />
@@ -326,6 +332,8 @@ function App() {
                 <label className="form-check-label">
                   <input
                     onBlur={handleBlur}
+                    name="Gender"
+                    value="other"
                     type="radio"
                     className="form-check-input"
                   />
@@ -370,7 +378,7 @@ function App() {
           <br />
           <br />
 
-          <button type="submit" className="btn btn-primary mb-5">
+          <button type="submit" onBlur={handleBlur} name="send" className="btn btn-primary mb-5">
             Submit
           </button>
           <br />

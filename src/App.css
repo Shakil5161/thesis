@@ -12,7 +12,7 @@ body{
 .ready{
   height: 20px;
   width: 30px;
-  
+  margin-top: 10px;
 }
 
 input[type=range] {
