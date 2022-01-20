@@ -19,7 +19,6 @@ function App() {
     const data = [...formValue, value];
     setFormValue(data);
 
-
   };
   console.log(formValue);
 
@@ -76,7 +75,7 @@ function App() {
           
         </div>
 
-        <fieldset disabled style={{ display: ready ? "block" : "none" }}>
+        <disabled disabled style={{ display: ready ? "block" : "none" }}>
           <div className="form-group">
             <label for="name">Name:</label>
             <input
@@ -226,7 +225,7 @@ function App() {
             Submit
           </button>
           <br />
-        </fieldset>
+        </disabled>
 
         <fieldset style={{ display: ready ? "none" : "block" }}>
           <h5>
